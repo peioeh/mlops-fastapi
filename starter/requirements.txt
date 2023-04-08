@@ -1,9 +1,12 @@
 python==3.8
-numpy
-pandas
-scikit-learn
+numpy~=1.24.2
+pandas~=2.0.0
+scikit-learn~=1.2.2
 pytest
 requests
 fastapi==0.63.0
 uvicorn
 gunicorn
+
+joblib~=1.2.0
+setuptools~=60.2.0
