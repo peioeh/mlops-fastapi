@@ -3,14 +3,16 @@
 from sklearn.model_selection import train_test_split
 from ml.data import process_data
 from ml.model import train_model, compute_model_metrics, inference
+from ml.metrics import slice_metrics
 import pandas as pd
 import joblib
 import logging
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(module)s - %(levelname)s - %(message)s')
 logger = logging.getLogger()
+file_handler = logging.FileHandler('slice_output.txt')
+logger.addHandler(file_handler)
 
-# Add the necessary imports for the starter code.
 
 # Add code to load in the data.
 data = pd.read_csv('../data/census.csv', sep=',')
@@ -51,8 +53,14 @@ y_pred = inference(rf, X_test)
 
 # Determine the classification metrics.
 precision, recall, fbeta = compute_model_metrics(y_test, y_pred)
-logger.info(f'Classification metrics: precision={precision}, recall={recall}, fbeta={fbeta}')
+logger.info(f'Classification metrics: precision={precision}, recall={recall}, fbeta={fbeta}\n')
 
+# Computes model metrics on slices of the data (when the value of marital-status is held fixed)
+logger.info('Compute metrics when the value of marital-status is held fixed:')
+metrics = slice_metrics(rf, test, cat_features, encoder, lb, 'marital-status')
+for feature_val in metrics:
+    precision, recall, fbeta = metrics[feature_val]
+    logger.info(f'{feature_val}: precision={precision}, recall={recall}, fbeta={fbeta}')
 
 
 
