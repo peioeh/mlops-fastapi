@@ -57,7 +57,7 @@ class IndividualAttributes(BaseModel):
                             "capital-loss": 0,
                             "hours-per-week": 20,
                             "native-country": "United-States"
-                        }
+                            }
         }
 
 
