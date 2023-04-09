@@ -41,6 +41,25 @@ class IndividualAttributes(BaseModel):
 
     class Config:
         allow_population_by_field_name = True
+        schema_extra = {
+            "example": {
+                            "age": "36",
+                            "workclass": "State-gov",
+                            "fnlgt": "212143",
+                            "education": "Bachelors",
+                            "education-num": "13",
+                            "marital-status": "Married-civ-spouse",
+                            "occupation": "Adm-clerical",
+                            "relationship": "Wife",
+                            "race": "White",
+                            "sex": "female",
+                            "capital-gain": "0",
+                            "capital-loss": "0",
+                            "hours-per-week": "20",
+                            "native-country": "United-States"
+                        }
+        }
+
 
 
 # Use POST action to send data to the server
