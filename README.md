@@ -1,5 +1,10 @@
 Working in a command line environment is recommended for ease of use with git and dvc. If on Windows, WSL1 or 2 is recommended.
 
+**Notes**
+> Github repo available at https://github.com/peioeh/mlops-fastapi \
+> Deployed using render.com at https://infer-salary.onrender.com/
+
+
 # Environment Set up
 * Download and install conda if you don’t have it already.
     * Use the supplied requirements file to create a new environment, or
