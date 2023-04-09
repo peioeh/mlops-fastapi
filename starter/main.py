@@ -1,6 +1,5 @@
 import uvicorn
 from fastapi import FastAPI
-from fastapi.responses import PlainTextResponse
 from pydantic import BaseModel, Field
 from starter.ml.data import process_data
 from starter.ml.model import inference
