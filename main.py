@@ -49,8 +49,7 @@ async def api_inference(individual: IndividualAttributes):
     x_dict = {k: [v] for k, v in individual.dict().items()}
     X = pd.DataFrame.from_dict(x_dict)
     X_infer, _, _, _ = process_data(
-        X, categorical_features=cat_features, training=False, encoder=encoder, lb=lb
-    )
+        X, categorical_features=cat_features, training=False, encoder=encoder, lb=lb)
 
     # Model inference
     y_pred = inference(rf, X_infer)

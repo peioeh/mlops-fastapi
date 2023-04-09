@@ -2,8 +2,11 @@ from .data import process_data
 from .model import compute_model_metrics, inference
 import logging
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(module)s - %(levelname)s - %(message)s')
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(module)s - %(levelname)s - %(message)s')
 logger = logging.getLogger()
+
 
 def slice_metrics(rf, test, cat_features, encoder, lb, feature):
     """
@@ -19,7 +22,7 @@ def slice_metrics(rf, test, cat_features, encoder, lb, feature):
     for feature_val in test[feature].unique():
         # Proces the test data with the process_data function.
         X_test, y_test, _, _ = process_data(
-            test[test[feature]==feature_val], categorical_features=cat_features, label="salary", training=False, encoder=encoder, lb=lb
+            test[test[feature] == feature_val], categorical_features=cat_features, label="salary", training=False, encoder=encoder, lb=lb
         )
 
         # Model inference
