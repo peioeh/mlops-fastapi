@@ -40,8 +40,9 @@ X_train, y_train, encoder, lb = process_data(
 rf = train_model(X_train, y_train)
 
 # Save model
-joblib.dump(rf, 'random_forest.joblib')
-joblib.dump(encoder, 'encoder.joblib')
+joblib.dump(rf, '../model/random_forest.joblib')
+joblib.dump(encoder, '../model/encoder.joblib')
+joblib.dump(lb, '../model/lb.joblib')
 
 # Proces the test data with the process_data function.
 X_test, y_test, _, _ = process_data(
