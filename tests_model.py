@@ -30,7 +30,7 @@ def test_process_data(data):
     try:
         assert X_train.shape[1] == 3
     except AssertionError as err:
-        logging.error(f'Could not check X_train shape')
+        logging.error('Could not check X_train shape')
         raise err
     pytest.x_train = X_train
     pytest.y_train = y_train
@@ -41,7 +41,7 @@ def test_process_data(data):
     try:
         assert X_test.shape[1] == 3
     except AssertionError as err:
-        logging.error(f'Could not check X_test shape')
+        logging.error('Could not check X_test shape')
         raise err
     pytest.x_test = X_test
     pytest.y_test = y_test
