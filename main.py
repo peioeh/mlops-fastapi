@@ -43,19 +43,19 @@ class IndividualAttributes(BaseModel):
         allow_population_by_field_name = True
         schema_extra = {
             "example": {
-                            "age": "36",
+                            "age": 36,
                             "workclass": "State-gov",
-                            "fnlgt": "212143",
+                            "fnlgt": 212143,
                             "education": "Bachelors",
-                            "education-num": "13",
+                            "education-num": 13,
                             "marital-status": "Married-civ-spouse",
                             "occupation": "Adm-clerical",
                             "relationship": "Wife",
                             "race": "White",
                             "sex": "female",
-                            "capital-gain": "0",
-                            "capital-loss": "0",
-                            "hours-per-week": "20",
+                            "capital-gain": 0,
+                            "capital-loss": 0,
+                            "hours-per-week": 20,
                             "native-country": "United-States"
                         }
         }
