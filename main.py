@@ -14,14 +14,16 @@ lb = joblib.load('model/lb.joblib')
 cat_features = [
     "workclass",
     "education",
-    "marital_status",
+    "marital-status",
     "occupation",
     "relationship",
     "race",
     "sex",
-    "native_country",
+    "native-country",
 ]
 
+def to_hyphen(string: str) -> str:
+    return '-'.join(word for word in string.split('_'))
 
 class IndividualAttributes(BaseModel):
     age: int
@@ -40,6 +42,7 @@ class IndividualAttributes(BaseModel):
     native_country: str = Field(alias='native-country')
 
     class Config:
+        alias_generator = to_hyphen
         allow_population_by_field_name = True
         schema_extra = {
             "example": {
@@ -65,7 +68,7 @@ class IndividualAttributes(BaseModel):
 # Use POST action to send data to the server
 @app.post("/inference/")
 async def api_inference(individual: IndividualAttributes):
-    x_dict = {k: [v] for k, v in individual.dict().items()}
+    x_dict = {k: [v] for k, v in individual.dict(by_alias=True).items()}
     X = pd.DataFrame.from_dict(x_dict)
     X_infer, _, _, _ = process_data(
         X, categorical_features=cat_features, training=False, encoder=encoder, lb=lb)
