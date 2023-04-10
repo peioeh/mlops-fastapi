@@ -46,7 +46,9 @@ We used 20% of the Census Income dataset for evaluation.
 Classification metrics: precision=0.7282361847085541, recall=0.6291693917593199, fbeta=0.6750877192982457
 
 ## Ethical Considerations
-Anonymous data.
+Anonymous data. Using Gender and Race as features to predict a salary may raise ethical concerns.
 
 ## Caveats and Recommendations
-Spaces were manually removed from the dataset.
+Spaces were manually removed from the dataset. Note that in the 3 features workclass, occupation and native-country, a question mark '?' can be found. 
+The dataset used for training is quite old : the extraction was done by Barry Becker from the 1994 Census database. I would recommend to retrain the model on more recent data.
+Also, there are great class imbalances in the data set used for training: 9 times more Whites than Blacks, 2 times more Males than Females for instance. 
