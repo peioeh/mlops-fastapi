@@ -12,7 +12,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(module)s - %(levelname)s - %(message)s')
 logger = logging.getLogger()
-file_handler = logging.FileHandler('slice_output.txt')
+file_handler = logging.FileHandler('../model/slice_output.txt')
 logger.addHandler(file_handler)
 
 

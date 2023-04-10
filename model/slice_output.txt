@@ -1,0 +1,10 @@
+Classification metrics: precision=0.7345264727815063, recall=0.6099071207430341, fbeta=0.6664411366711773
+
+Compute metrics when the value of marital-status is held fixed:
+Married-civ-spouse: precision=0.7247780468119451, recall=0.6545189504373178, fbeta=0.6878590578322482
+Never-married: precision=0.8653846153846154, recall=0.4411764705882353, fbeta=0.5844155844155845
+Divorced: precision=0.8, recall=0.34782608695652173, fbeta=0.48484848484848486
+Separated: precision=1.0, recall=0.375, fbeta=0.5454545454545454
+Married-spouse-absent: precision=1.0, recall=0.125, fbeta=0.2222222222222222
+Married-AF-spouse: precision=1.0, recall=0.2, fbeta=0.33333333333333337
+Widowed: precision=1.0, recall=0.1, fbeta=0.18181818181818182
